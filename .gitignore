@@ -1,6 +1,0 @@
-.vscode/
-*.exe
-*.out
-*.ipynb
-__pycache__/
-*.txt
