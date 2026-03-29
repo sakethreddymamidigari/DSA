@@ -5,12 +5,8 @@ int sort(vector<int> &arr, int low , int high){
     int i=low;
     int j=high;
     while(i<j){
-        while(arr[i]<=pivot && i<=high-1){
-            i++;
-        }
-        while(arr[j]>pivot && j>=low+1){
-            j--;
-        }
+        while(arr[i]<=pivot && i<=high-1) i++;
+        while(arr[j]>pivot && j>=low+1) j--;
         if(i<j){
             swap(arr[i],arr[j]);
         }
@@ -22,8 +18,8 @@ int sort(vector<int> &arr, int low , int high){
 void qDivide(vector<int> &arr,int low,int high) {
     if(low<high){
         int pIndex= sort(arr,low,high);
-        qDivide(arr,low,pIndex-1);
         qDivide(arr,pIndex+1,high);
+        qDivide(arr,low,pIndex-1);
     }
 }
 
