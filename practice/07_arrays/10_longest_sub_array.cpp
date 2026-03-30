@@ -21,8 +21,8 @@ int longestSubArray1(vector<int> arr, int n,int k){
 int longestSubArray2(vector<int> arr, int n, int k){
     // Better if only positives 
     // Optimal if positives and negetives elements in the array
-    // TC: O(n*logn) if ordered_mam else O(n) if unoredered_map on average case
-    // SC: O(n) 
+    // TC: O(n*logn) if ordered_map else O(n) if unordered_map on average case
+    // SC: O(n)
     map<long long,int> preHashmap;
     long long sum=0;
     int maxLen=0;
