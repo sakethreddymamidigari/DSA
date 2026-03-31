@@ -2,6 +2,7 @@
 // for positives and (positives and negetives)
 #include<bits/stdc++.h>
 using namespace std;
+
 int longestSubArray1(vector<int> arr, int n,int k){
     // Brute force approach
     // TC: O(n^2)
@@ -18,6 +19,7 @@ int longestSubArray1(vector<int> arr, int n,int k){
     }
     return maxLen;
 }
+
 int longestSubArray2(vector<int> arr, int n, int k){
     // Better if only positives 
     // Optimal if positives and negetives elements in the array
