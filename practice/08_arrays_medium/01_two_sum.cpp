@@ -13,6 +13,9 @@ bool twoSum1(vector<int> arr, int n, int k){
 }
 
 bool twoSum2(vector<int> arr, int n, int k){
+    // Better solution using map
+    // TC: O(nlogn) if map or O(n) if onordered_map
+    // SC: O(n)
     map<int,int> mp;
     for(int i=0;i<n;i++){
         int rem=k-arr[i];
@@ -23,6 +26,9 @@ bool twoSum2(vector<int> arr, int n, int k){
 }
 
 bool twoSum3(vector<int> arr, int n, int k){
+    // Optimal solution
+    // TC: O(nlog)
+    // SC: O(1)
     sort(arr.begin(),arr.end());
     int i=0,j=n-1;
     while(i<j){
