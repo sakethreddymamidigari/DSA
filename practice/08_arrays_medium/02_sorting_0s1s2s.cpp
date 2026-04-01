@@ -25,7 +25,7 @@ void sort0s1s2s2(vector<int> &arr, int n){
 }
 
 void sort0s1s2s3(vector<int> &arr, int n){
-    // Optimal approach using Dutch flag
+    // Optimal approach using Dutch nation flag algorithm
     // TC: O(n)
     // SC: O(1)
     int low=0,mid=0,high=n-1;
@@ -44,7 +44,7 @@ void sort0s1s2s3(vector<int> &arr, int n){
 }
 
 int main(){
-    int n,k;
+    int n;
     cin>>n;
     vector<int> arr(n);
     for(int i=0;i<n;i++) cin>>arr[i];
