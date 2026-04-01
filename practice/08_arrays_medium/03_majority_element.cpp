@@ -32,7 +32,7 @@ int majorityElement2(vector<int> arr,int n){
 }
 
 int majorityElement3(vector<int> arr,int n){
-    // Otptimal approach by checking the dominating element
+    // Otptimal approach by using moore's voting method
     // TC: O(2*n)
     // SC: O(1)
     int mEle;
