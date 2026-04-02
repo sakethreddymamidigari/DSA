@@ -45,5 +45,4 @@ int main(){
     for(int i=0;i<n;i++) cin>>arr[i];
     auto[left,right,maxSum]=maxSumArray2(arr,n);
     cout<< left<<" "<<right<<","<<maxSum;
-
 }
