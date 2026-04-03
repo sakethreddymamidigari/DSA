@@ -1,11 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 int buyAndSellStock(vector<int> arr, int n){
+    // TC: O(n)
+    // SC: O(1)
     int mini=arr[0], profit=0;
     for(int i=1;i<n;i++){
+        mini=min(mini,arr[i-1]);
         int cost=arr[i]-mini;
         profit=max(profit,cost);
-        mini=min(mini,arr[i]);
     }
     return profit;
 }
