@@ -39,11 +39,11 @@ vector<int> spiralMatrix(vector<vector<int>> &matrix, int n,int m){
 
 int main(){
     int n,m;
-    cin>>n,m;
+    cin>>n>>m;
     vector<vector<int>> matrix(n,vector<int>(m));
     for(int i=0;i<n;i++) for(int j=0;j<m;j++) cin>>matrix[i][j];
     vector<int> ans=spiralMatrix(matrix,n,m);
-    for(int i=0;i<(n*m);i++){
+    for(int i=0;i<ans.size();i++){
         cout<<ans[i]<<" ";
     }
 }
