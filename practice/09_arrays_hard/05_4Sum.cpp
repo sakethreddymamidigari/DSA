@@ -15,7 +15,8 @@ vector<vector<int>> fourSum(vector<int> nums,int n,int t){
             if(j>i+1 && nums[j]==nums[j-1]) continue;
             int k=j+1,l=n-1;
             while(k<l){
-                int sum=nums[i]+nums[j]+nums[k]+nums[l];
+                long long sum=nums[i]+nums[j];
+                sum+=nums[k]+nums[l];
                 if(sum<t) k++;
                 else if(sum>t) l--;
                 else{
