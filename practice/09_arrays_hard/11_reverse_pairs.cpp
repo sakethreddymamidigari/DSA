@@ -42,7 +42,7 @@ void merge(vector<int> &arr, int low , int mid, int high){
     }
 }
 
-void cntPairs(vector<int> arr,int low,int mid,int high, int &cnt){
+void cntPairs(vector<int> &arr,int low,int mid,int high, int &cnt){
     int right=mid+1;
     for(int left=low;left<=mid;left++){
         while(right<=high && arr[left]>2*arr[right]) right++;
