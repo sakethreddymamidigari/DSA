@@ -1,23 +1,21 @@
 /*
-    Count inversions
-    printing the count of inversion pair
-    arr[i]>arr[j] where i<j
+    Reverse Pairs
+    arr[i]>2*arr[j]  &&  i>j
 
     Input:
-    9
-    8 1 10 2 3 4 7 5 6
+    7
+    40 25 19 12 9 6 2
 
     Output:
-    15        8,1 8,2 8,3 8,4 8,7 8,5 8,6 10,2 8,3 8,4 8,7 8,5 8,6 7,5 7,6
-    
-*/
+    15
 
+    Optimal Solution
+    TC: O(2*nlogn)
+    SC: O(n)
+*/
 #include<bits/stdc++.h>
 using namespace std;
-void cntInversions(vector<int> &arr, int low , int mid, int high, int &cnt){
-    // Optimal solution
-    // TC: O(nlogn)
-    // SC: O(n)
+void merge(vector<int> &arr, int low , int mid, int high){
     vector<int> temp;
     int left=low;
     int right=mid+1;
@@ -29,7 +27,6 @@ void cntInversions(vector<int> &arr, int low , int mid, int high, int &cnt){
         else{
             temp.push_back(arr[right]);
             right++;
-            cnt+=mid-left+1;
         }
     }
     while(left<=mid){
@@ -45,12 +42,22 @@ void cntInversions(vector<int> &arr, int low , int mid, int high, int &cnt){
     }
 }
 
+void cntPairs(vector<int> arr,int low,int mid,int high, int &cnt){
+    int right=mid+1;
+    for(int left=low;left<=mid;left++){
+        while(right<=high && arr[left]>2*arr[right]) right++;
+        cnt+=right-(mid+1);
+    }
+    return;
+}
+
 void divArray(vector<int> &arr,int low,int high,int &cnt) {
     if(low>=high) return;
     int mid=(low+high)/2;
     divArray(arr,low,mid,cnt);
     divArray(arr,mid+1,high,cnt);
-    cntInversions(arr,low,mid,high,cnt);
+    cntPairs(arr,low,mid,high,cnt);
+    merge(arr,low,mid,high);
 }
 
 int main(){
