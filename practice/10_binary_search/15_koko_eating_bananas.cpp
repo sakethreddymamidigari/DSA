@@ -35,7 +35,7 @@ int findHours(vector<int> bananas,int n, int mid){
 
 
 int kokoEatingBananas(vector<int> bananas,int n,int hours){
-    // TC: O(log(maxi))
+    // TC: O(n*log(maxi)+n)
     int low=0,high=maxi(bananas,n); // O(n)
     while(low<=high){
         int mid=(low+high)/2;
