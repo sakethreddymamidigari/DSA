@@ -50,7 +50,7 @@ int countBouquets(vector<int> flowers,int n,int f,int day){
 int minDaysToMakeBouquets(vector<int> flowers,int n, int b,int f){
     int low=minMax(flowers,n).first, high=minMax(flowers,n).second;
     while(low<high){
-        int mid=(low+high)/2;
+        int mid=low+(high-low)/2;
         if(countBouquets(flowers,n,f,mid)<b) low=mid+1;
         else high=mid;
     }
