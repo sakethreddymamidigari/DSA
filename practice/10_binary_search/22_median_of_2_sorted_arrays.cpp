@@ -34,7 +34,7 @@ double medianOfTwoSortedArrays(vector<int> a, vector<int> b, int n1, int n2){
         if(mid1>0)  l1=a[mid1-1];
         if(mid2>0)  l2=b[mid2-1];
         if(l1<=r2 && l2<=r1){
-            if((n1+n2)/2==1) return min(r1,r2);
+            if((n1+n2)%2==1) return max(l1,l2);
             return ((double)(max(l1,l2)+min(r1,r2))/2.0);
         }
         else if(l1>r2) high=mid1-1;
