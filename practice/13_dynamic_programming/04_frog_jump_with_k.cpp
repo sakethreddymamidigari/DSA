@@ -12,9 +12,23 @@ int frogJumpWithK1(vector<int> heights,vector<int> &dp,int n,int k){
         }
     }
     return dp[n]=mini;
+}
 
+// tabulation methode
 
-
+int frogJumpWithK2(vector<int> heights, vector<int> &dp, int n,int k){
+    dp[0]=0;
+    for(int i=1;i<n;i++){
+        int minsteps=INT_MAX;
+        for(int j=1;j<=k;j++){
+            if(i-j>=0){
+                int jumpsk=dp[i-j]+abs(heights[i]-heights[i-j]);
+                minsteps=min(minsteps,jumpsk);
+            }
+        }
+        dp[i]=minsteps;
+    }
+    return dp[n-1];
 }
 
 int main(){
@@ -22,6 +36,7 @@ int main(){
     cin>>n>>k;
     vector<int> heights(n);
     for(int i=0;i<n;i++) cin>>heights[i];
-    vector<int> dp(n);
-    cout<<frogJumpWithK1(heights,dp,n-1,k);
+    vector<int> dp(n,0);
+    // cout<<frogJumpWithK1(heights,dp,n-1,k);
+    cout<<frogJumpWithK2(heights,dp,n,k);
 }
